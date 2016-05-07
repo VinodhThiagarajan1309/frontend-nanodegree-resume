@@ -26,17 +26,36 @@ This is empty on purpose! Your code to build the resume will go here.
 
 /*Display Name*/
 
-$('#header').append(HTMLheaderName.replace('%data%',bio.name));
-$('#header').append(HTMLheaderRole.replace('%data%',bio.role));
+var headerId = $('#header');
+var topContactId = $('#topContacts');
+
+headerId.prepend(HTMLheaderRole.replace('%data%',bio.role));
+headerId.prepend(HTMLheaderName.replace('%data%',bio.name));
 
 /*Contacts*/
-
-var topContactId = $('#topContacts');
-$('#header').append(HTMLbioPic.replace('%data%',bio.biopic));
-$('#header').append(HTMLmobile.replace('%data%',bio.contacts.mobile));
-$('#header').append(HTMLemail.replace('%data%',bio.contacts.email));
+topContactId.append(HTMLcontactGeneric.replace('%data%',bio.contacts.mobile));
+topContactId.append(HTMLmobile.replace('%data%',bio.contacts.mobile));
+topContactId.append(HTMLemail.replace('%data%',bio.contacts.email));
 topContactId.append(HTMLgithub.replace('%data%',bio.contacts.github));
 topContactId.append(HTMLlocation.replace('%data%',bio.contacts.location));
+
+/*Pic and Message*/
+headerId.append(HTMLbioPic.replace('%data%',bio.biopic));
+headerId.append(HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage));
+header
+
+/*Skills and Skill List*/
+var skillsId = $('#skills');
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+
+headerId.append(HTMLskillsStart);
+
+for(i in bio.skills){
+	skillsId.append(HTMLskills.bio.skills);
+}
+
+
 /*Work Experience*/
 var work = {
   "email": [
