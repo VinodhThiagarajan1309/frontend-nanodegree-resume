@@ -2,9 +2,11 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
+ $( "img" ).addClass( "img img-responsive" );
+
  var bio = {
   "name": "Vinodh",
-  "role": "Java Developer",
+  "role": "Web Developer",
   "contacts": {
 	"mobile": "682-401-8808",
 	"email": "vinodh.thiagarajan@gmail.com",
@@ -16,7 +18,6 @@ This is empty on purpose! Your code to build the resume will go here.
 	"Java",
 	"Javascript",
 	"Jquery",
-	"Spring",
 	"Groovy",
 	"Grails"
   ],
@@ -29,26 +30,14 @@ This is empty on purpose! Your code to build the resume will go here.
 var headerId = $('#header');
 var topContactId = $('#topContacts');
 
-headerId.prepend(HTMLheaderRole.replace('%data%',bio.role));
-headerId.prepend(HTMLheaderName.replace('%data%',bio.name));
+//headerId.prepend(HTMLheaderRole.replace('%data%',bio.role));
+//headerId.prepend(HTMLheaderName.replace('%data%',bio.name));
 
-/*Contacts*/
-topContactId.append(HTMLcontactGeneric.replace('%data%',bio.contacts.mobile));
-topContactId.append(HTMLemail.replace('%data%',bio.contacts.email));
-topContactId.append(HTMLgithub.replace('%data%',bio.contacts.github));
-topContactId.append(HTMLlocation.replace('%data%',bio.contacts.location));
+$('.navbar-brand').prepend(HTMLheaderRole.replace('%data%',bio.role));
+$('.navbar-brand').prepend(HTMLheaderName.replace('%data%',bio.name));
 
-/*Pic and Message*/
-headerId.append(HTMLbioPic.replace('%data%',bio.biopic));
-headerId.append(HTMLwelcomeMsg.replace('%data%',bio.welcomeMessage));
-header
 
-/*Skills and Skill List*/
-headerId.append(HTMLskillsStart);
 
-for(i in bio.skills){
-	$('#skills').append(HTMLskills.replace('%data%',bio.skills[i]));
-}
 
 /*Work Json*/
 var work = {
@@ -189,8 +178,7 @@ educationId.append(HTMLschoolLocation.replace('%data%',education.schools[i].loca
 educationId.append(HTMLonlineClasses);
 for(i in education.onlineCourses){
 educationId.append(HTMLschoolStart);
-educationId.append(HTMLonlineTitle.replace('%data%',education.onlineCourses[i].title));
-educationId.append(HTMLonlineSchool.replace('%data%',education.onlineCourses[i].school));
+educationId.append(HTMLonlineTitle.replace('%data%',education.onlineCourses[i].title)+HTMLonlineSchool.replace('%data%',education.onlineCourses[i].school));
 educationId.append(HTMLonlineDates.replace('%data%',education.onlineCourses[i].dates));
 educationId.append(HTMLonlineURL.replace('%data%',education.onlineCourses[i].url));
  

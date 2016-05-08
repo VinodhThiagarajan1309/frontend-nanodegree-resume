@@ -14,6 +14,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+.mainSections{
+  padding-right: 10px;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -57,7 +61,7 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px 5%;
+  
 
 }
 
@@ -68,6 +72,7 @@ h5 {
   color: #999;
   line-height: 16px;
   float: left;
+  padding-left: 10px;
 }
 
 .location-text {
@@ -76,6 +81,7 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
+  padding-right: 10px;
 
 }
 
@@ -83,13 +89,14 @@ p {
   font-size: 14px;
   color: #333;
   line-height: 21px;
+  padding:10px;
 }
 
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
+  padding-left: 10px;
 }
 
 .welcome-message {
@@ -158,6 +165,7 @@ ul {
 
 img {
   padding: 10px;
+  max-width: 100%;
 }
 
 span {
@@ -168,31 +176,16 @@ span {
   text-align: center;
 }
 
-/* Media queries to handle various device widths */
-
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+.profilePic{
+  width: 50%;
+  height: 50%;
+ 
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+table{
+  max-width: 100%;
 }
 
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
 
 #map {
   display: block;
@@ -206,9 +199,13 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
+
+td{
+  background-color: #f5ae23;
 }
+.headTR{
+  background-color: #333;
+}
+
+/* Media queries to handle various device widths */
+
